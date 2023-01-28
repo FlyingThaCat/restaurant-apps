@@ -82,16 +82,14 @@ const Detail = {
                     <h3>Mantap</h3>
                   </div>
                   </div>
-                  <div class="reviewForm">
+                  <form class="reviewForm">
                     <h1>Leave A Review</h1>
-                    <form>
                       <label for="name">Name:</label><br>
                       <input type="text" id="name" name="name"><br>
                       <label for="review">Review:</label><br>
                       <input type="text" id="review" name="review"><br>
                       <input type="submit" value="Submit">
                     </form>
-                  </div>
               </div>
               <!-- CREATIVITY ENDS HERE -->
           </section>
