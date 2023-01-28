@@ -325,7 +325,7 @@ main {
 }
 
 .customerReviewContainer {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   gap: 20px
@@ -356,7 +356,12 @@ main {
 .reviewForm {
   margin-top: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   border-radius: 15px;
+}
+
+.reviewForm h1{
+  margin-top: 15px;
 }
 
 input[type=text], select {
@@ -378,6 +383,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 input[type=submit]:hover {
