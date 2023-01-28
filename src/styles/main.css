@@ -324,6 +324,66 @@ main {
   border-left: 3px solid #eeeeee;
 }
 
+.customerReviewContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px
+}
+
+.customerReview {
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  min-width: 20%;
+}
+
+.customerReview h1 {
+  font-size: medium;
+  margin-top: 15px;
+}
+
+.customerReview h2 {
+  font-weight: 500;
+  font-size: small;
+}
+
+.customerReview h3 {
+  font-size: medium;
+  margin-bottom: 15px;
+}
+
+.reviewForm {
+  margin-top: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+input[type=text], select {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 40%;
+  background-color: #c21515;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #820000;
+}
 
 /* FOOTER */
 

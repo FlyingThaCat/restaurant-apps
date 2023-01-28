@@ -63,6 +63,36 @@ const Detail = {
                 </div>
               </div>
               </div>
+              <div class="restaurantDetail">
+                <h1 tabindex="0" class="restaurantDetail__menu">Restaurant Review</h1>
+                <div class="customerReviewContainer">
+                  <div class="customerReview">
+                    <h1>Ahmad</h1>
+                    <h2>13 November 2019</h2>
+                    <h3>Tidak rekomendasi untuk pelajar!</h3>
+                  </div>
+                  <div class="customerReview">
+                    <h1>Said</h1>
+                    <h2>27 Januari 2023</h2>
+                    <h3>Disini sangat menyenangkan</h3>
+                  </div>
+                  <div class="customerReview">
+                    <h1>ALi</h1>
+                    <h2>27 Januari 2023</h2>
+                    <h3>Mantap</h3>
+                  </div>
+                  </div>
+                  <div class="reviewForm">
+                    <h1>Leave A Review</h1>
+                    <form>
+                      <label for="name">Name:</label><br>
+                      <input type="text" id="name" name="name"><br>
+                      <label for="review">Review:</label><br>
+                      <input type="text" id="review" name="review"><br>
+                      <input type="submit" value="Submit">
+                    </form>
+                  </div>
+              </div>
               <!-- CREATIVITY ENDS HERE -->
           </section>
           <div id="likeButtonContainer"></div>
