@@ -90,6 +90,7 @@ const Detail = {
                       <input type="text" id="review" name="review"><br>
                       <input type="submit" value="Submit">
                     </form>
+                  </div>
               </div>
               <!-- CREATIVITY ENDS HERE -->
           </section>
