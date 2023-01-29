@@ -1,8 +1,8 @@
-
+import RestaurantApi from '../data/restaurantapi-source';
 import { createRestaurantReviewForm } from '../views/tempates/template-creator';
 
 // MUST CHANGE TO REVIEW BECAUSE REPRESENT REVIEW FORM !!!
-
+// fix async error handler
 const RestaurantForm = {
     async init({restaurntFormContainer, restaurantId}) {
         this._restaurntFormContainer = restaurntFormContainer;
@@ -22,8 +22,16 @@ const RestaurantForm = {
 
 
         restaurantForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            window.alert(`MEOW!!, ${name.value} Say ${review.value} On This Restaurant Id ${id}`)
+            event.preventDefault()
+            RestaurantApi.addReviewRestaurant(id, name.value, review.value);
+            Swal.fire(
+                'Success Post',
+                'Please Wait 30 Second. The Page Will Reload Automatically',
+                'success'
+              )
+            setTimeout(function() {
+                window.location.reload();
+            }, 30000);
         })
     }
 }

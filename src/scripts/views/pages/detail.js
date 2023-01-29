@@ -2,6 +2,7 @@ import UrlParser from "../../routes/url-parser";
 import RestaurantApi from "../../data/restaurantapi-source";
 import { createRestaurantDetailTemplate, createRestaurantMenus, createRestaurantReview, createRestaurantReviewItem } from '../tempates/template-creator';
 import RestaurantForm from "../../utils/restaurant-form-initiator";
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
     async render() {
@@ -22,6 +23,10 @@ const Detail = {
       const restaurantContainer = document.querySelector('#restaurantDetail__content');
       const restaurantContent = document.querySelector(".restaurantDetail");
       restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+      LikeButtonInitiator.init({
+        likeButtonContainer: document.querySelector('#likeButtonContainer'),
+        restaurant: restaurant
+      });
 
       // fa star add color logic
       const ratings = document.getElementById(`restaurant-item__ratings-${restaurant.id}`);

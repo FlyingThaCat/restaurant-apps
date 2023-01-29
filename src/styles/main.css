@@ -92,7 +92,7 @@ a {
   align-items: center;
   min-height: 300px;
   text-align: center;
-  background-image: linear-gradient(to bottom, rgba(168, 158, 145, 0.63), rgba(168, 166, 162, 0.842)), url('../public/images/heros/hero-image_2.jpg');
+  background-image: linear-gradient(to bottom, rgba(168, 158, 145, 0.63), rgba(168, 166, 162, 0.842)), url('../public/images/heros/hero.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -423,6 +423,28 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #820000;
 }
+
+/*
+  Like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #820000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+} 
 
 /* FOOTER */
 
