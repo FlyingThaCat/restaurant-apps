@@ -42,6 +42,10 @@
         height: 80%;
         margin-bottom: 15px;
     }
+
+    .customerReviewContainer {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (min-width: 524px) {

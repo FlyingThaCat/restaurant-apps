@@ -76,15 +76,15 @@ const createRestaurantReviewItem = (review) => `
 `;
 
 const createRestaurantReviewForm = () => `
-    <form class="reviewForm">
+    <form id="restaurantForm" class="reviewForm">
         <h1>Leave A Review</h1>
-        <label for="name">Name:</label>
+        <label class="required" for="name">Name:</label>
         <br>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" required>
         <br>
-        <label for="review">Review:</label>
+        <label class="required" for="review">Review:</label>
         <br>
-        <input type="text" id="review" name="review">
+        <input type="text" id="review" name="review" required>
         <br>
         <input type="submit" value="Submit">
     </form>
