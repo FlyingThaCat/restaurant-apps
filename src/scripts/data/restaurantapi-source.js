@@ -4,13 +4,13 @@ class RestaurantApi {
     static async listRestaurant() {
         const response = await fetch(API_ENDPOINT.LIST_RESTAURANT);
         const responseJson = await response.json();
-        console.log(responseJson.results)
         return responseJson.restaurants;
     }
 
     static async detailRestaurant(id) {
         const response = await fetch(API_ENDPOINT.DETAIL(id));
-        return response.json();
+        const responseJson = await response.json();
+        return responseJson.restaurant;
     }
 
     static async addReviewRestaurant(id, name, review) {

@@ -104,9 +104,6 @@
         grid-column-gap: 20px;
         grid-row-gap: 25px ;
     }
-    .customerReviewContainer {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media screen and (min-width: 900px) {
