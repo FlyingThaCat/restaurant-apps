@@ -84,7 +84,7 @@ const createRestaurantReviewForm = () => `
         <br>
         <label class="required" for="review">Review:</label>
         <br>
-        <input type="text" id="review" name="review" required>
+        <textarea id="review" name="review" form="restaurantForm" required></textarea>
         <br>
         <input type="submit" value="Submit">
     </form>
