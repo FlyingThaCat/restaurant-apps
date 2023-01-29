@@ -67,9 +67,11 @@ const Detail = {
       // restarant review
       restaurantContent.innerHTML += createRestaurantReview()
       const reviewContainer = document.querySelector('.customerReviewContainer')
-      // if (!restaurant.customerReviews.length === 1){
-      //   document.getElementById("#customerReviewContainer").classList.add("reviewMany")
-      // }
+      if (restaurant.customerReviews.length > 1){
+        const container = document.querySelector("#customerReviewContainer");
+        container.classList.remove("reviewSolo")
+        container.classList.add("reviewMany")
+      }
       restaurant.customerReviews.forEach((customer) => {
         reviewContainer.innerHTML += createRestaurantReviewItem(customer)
       })
