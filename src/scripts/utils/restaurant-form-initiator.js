@@ -12,6 +12,11 @@ const RestaurantForm = {
     },
 
     async _renderForm() {
+        if (sessionStorage.getItem('reloading')) {
+            sessionStorage.removeItem('reloading');
+            document.location.reload();
+        }
+
         const id = this._restaurantId;
         
         this._restaurntFormContainer.innerHTML += createRestaurantReviewForm();
@@ -20,18 +25,25 @@ const RestaurantForm = {
         const name = document.querySelector('#name');
         const review = document.querySelector('#review');
 
-
-        restaurantForm.addEventListener('submit', (event) => {
+        restaurantForm.addEventListener('submit', async (event) => {
             event.preventDefault()
-            RestaurantApi.addReviewRestaurant(id, name.value, review.value);
+            const result = await RestaurantApi.addReviewRestaurant(id, name.value, review.value);
+            if (!result.error) {
+                Swal.fire(
+                    'Success Post',
+                    'Please Wait 5 Second. The Page Will Reload Automatically',
+                    'success'
+                  )
+                setTimeout(() => {
+                    sessionStorage.setItem('reloading', 'true');
+                    window.location.reload();
+                }, 5000);
+            }
             Swal.fire(
-                'Success Post',
-                'Please Wait 30 Second. The Page Will Reload Automatically',
-                'success'
-              )
-            setTimeout(function() {
-                window.location.reload();
-            }, 30000);
+                'Failed Post',
+                `Please Try Again, ${result.message}`,
+                'error'
+            )
         })
     }
 }

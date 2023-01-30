@@ -389,7 +389,7 @@ input[id=review] {
 }
 
 input[type=text], select {
-  width: 50%;
+  width: 65%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -399,7 +399,7 @@ input[type=text], select {
 }
 
 textarea, select {
-  width: 50%;
+  width: 65%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -409,7 +409,7 @@ textarea, select {
 }
 
 input[type=submit] {
-  width: 50%;
+  width: 65%;
   background-color: #c21515;
   color: white;
   padding: 14px 20px;
@@ -433,7 +433,7 @@ input[type=submit]:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #820000;
+  background-color: #ff0000;
   
   position: fixed;
   bottom: 16px;

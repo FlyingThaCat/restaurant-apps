@@ -14,7 +14,7 @@ const FavoriteRestaurantIdb = {
         return (await dbPromise).get(OBJECT_STORE_NAME, id);
     },
 
-    async getAllRestaurant() {
+    async getAllRestaurants() {
         return (await dbPromise).getAll(OBJECT_STORE_NAME);
     },
 
@@ -23,7 +23,7 @@ const FavoriteRestaurantIdb = {
     },
 
     async deleteRestaurant(id) {
-        return(await dbPromise).delete(OBJECT_STORE_NAME, id);
+        return (await dbPromise).delete(OBJECT_STORE_NAME, id);
     },
 };
 
