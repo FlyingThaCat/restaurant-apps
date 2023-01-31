@@ -1,11 +1,9 @@
 import RestaurantApi from '../data/restaurantapi-source';
 import { createRestaurantReviewForm } from '../views/tempates/template-creator';
 
-// MUST CHANGE TO REVIEW BECAUSE REPRESENT REVIEW FORM !!!
-// fix async error handler
-const RestaurantForm = {
-    async init({restaurntFormContainer, restaurantId}) {
-        this._restaurntFormContainer = restaurntFormContainer;
+const ReviewForm = {
+    async init({reviewFormContainer, restaurantId}) {
+        this._reviewFormContainer = reviewFormContainer;
         this._restaurantId = restaurantId;
 
         await this._renderForm();
@@ -18,34 +16,35 @@ const RestaurantForm = {
         }
 
         const id = this._restaurantId;
-        
-        this._restaurntFormContainer.innerHTML += createRestaurantReviewForm();
+        this._reviewFormContainer.innerHTML += createRestaurantReviewForm();
 
-        const restaurantForm = document.querySelector('#restaurantForm');
+        const reviewForm = document.querySelector('#restaurantForm');
         const name = document.querySelector('#name');
         const review = document.querySelector('#review');
 
-        restaurantForm.addEventListener('submit', async (event) => {
+        reviewForm.addEventListener('submit', async (event) => {
             event.preventDefault()
-            const result = await RestaurantApi.addReviewRestaurant(id, name.value, review.value);
-            if (!result.error) {
+            try {
+                const result = await RestaurantApi.addReviewRestaurant(id, name.value, review.value);
                 Swal.fire(
                     'Success Post',
                     'Please Wait 5 Second. The Page Will Reload Automatically',
                     'success'
-                  )
+                )
                 setTimeout(() => {
                     sessionStorage.setItem('reloading', 'true');
                     window.location.reload();
                 }, 5000);
             }
-            Swal.fire(
-                'Failed Post',
-                `Please Try Again, ${result.message}`,
-                'error'
-            )
+            catch (error) {
+                Swal.fire(
+                    'Failed Post',
+                    `Please Try Again, ${error.message}`,
+                    'error'
+                )
+            }
         })
     }
 }
 
-export default RestaurantForm;
+export default ReviewForm;

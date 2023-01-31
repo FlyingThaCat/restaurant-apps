@@ -1,7 +1,8 @@
 import UrlParser from "../../routes/url-parser";
 import RestaurantApi from "../../data/restaurantapi-source";
 import { createRestaurantDetailTemplate, createRestaurantMenus, createRestaurantReview, createRestaurantReviewItem } from '../tempates/template-creator';
-import RestaurantForm from "../../utils/restaurant-form-initiator";
+import ReviewForm from "../../utils/review-form-initiator";
+import StarsInitiator from "../../utils/stars-initiator";
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
@@ -23,23 +24,16 @@ const Detail = {
       const restaurantContainer = document.querySelector('#restaurantDetail__content');
       const restaurantContent = document.querySelector(".restaurantDetail");
       restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+      
       LikeButtonInitiator.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),
         restaurant: restaurant
       });
 
-      // fa star add color logic
-      const ratings = document.getElementById(`restaurant-item__ratings-${restaurant.id}`);
-      const stars = ratings.getElementsByTagName('i');
-      const rating = restaurant.rating
-      for (let i = 0; i < rating; i++) {
-        stars[i].classList.add('fa-solid');
-      }
-      
-      // half star logic
-      if (rating % 1 !== 0) {
-        stars[Math.floor(rating)].classList.add('fa-star-half-alt');
-      }
+      StarsInitiator.init({
+        ratingsContainer: document.querySelector(`#restaurant-item__ratings-${restaurant.id}`),
+        restaurantRating: restaurant.rating
+      })
 
       // badges
       const badgesContainer = document.querySelector('#badge-tag');
@@ -81,8 +75,8 @@ const Detail = {
         reviewContainer.innerHTML += createRestaurantReviewItem(customer)
       })
 
-      RestaurantForm.init({
-        restaurntFormContainer: document.querySelector(".restaurantDetail"),
+      ReviewForm.init({
+        reviewFormContainer: document.querySelector(".restaurantDetail"),
         restaurantId: restaurant.id
       })
     }

@@ -1,5 +1,6 @@
 import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
 import { createRestaurantItemTemplate } from "../tempates/template-creator";
+import StarsInitiator from "../../utils/stars-initiator";
 
 const Favorite = {
     async render() {
@@ -14,24 +15,16 @@ const Favorite = {
     },
 
     async afterRender() {
-        const restarants = await FavoriteRestaurantIdb.getAllRestaurants();
-        const restarantsContainer = document.querySelector('#restaurants');
+        const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+        const restaurantsContainer = document.querySelector('#restaurants');
 
-        restarants.forEach((restaurant) => {
-            restarantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-
-            // fa star add color logic
-            const ratings = document.getElementById(`restaurant-item__ratings-${restaurant.id}`);
-            const stars = ratings.getElementsByTagName('i');
-            const rating = restaurant.rating
-            for (let i = 0; i < rating; i++) {
-              stars[i].classList.add('fa-solid');
-            }
-            
-            // half star logic
-            if (rating % 1 !== 0) {
-              stars[Math.floor(rating)].classList.add('fa-star-half-alt');
-            }
+        restaurants.forEach((restaurant) => {
+            const {id} = restaurant
+            restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+            StarsInitiator.init({
+                ratingsContainer: document.querySelector(`#restaurant-item__ratings-${id}`),
+                restaurantRating: restaurant.rating,
+            });
         });
     },
 };
