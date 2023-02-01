@@ -55,6 +55,30 @@ a {
   font-size: 44px;
 }
 
+/* SEARCHBOX */
+.searchBox, select{
+  width: 68%;
+  padding: 12px 20px;
+  margin: 1.3em;
+  margin-right: 5%;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.searchBar button {
+  width: 18%;
+  padding: 12px;
+  border-radius: 4px;
+  margin-left: 0;
+  margin-right: 1%;
+  background: #820000;
+  color: white;
+  font-size: 17px;
+  border: none;
+}
+
 /* TLN */
 
 .nav {
@@ -388,7 +412,7 @@ input[id=review] {
   color: red;
 }
 
-input[type=text], select {
+input[id=name], select {
   width: 65%;
   padding: 12px 20px;
   margin: 8px 0;

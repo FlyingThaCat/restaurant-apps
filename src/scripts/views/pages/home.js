@@ -1,5 +1,6 @@
 import RestaurantApi from '../../data/restaurantapi-source';
 import { createRestaurantItemTemplate } from '../tempates/template-creator';
+import StarsInitiator from '../../utils/stars-initiator';
 
 const Home = {
     async render() {

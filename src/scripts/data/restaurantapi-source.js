@@ -4,7 +4,7 @@ class RestaurantApi {
   static async listRestaurant() {
     const response = await fetch(API_ENDPOINT.LIST_RESTAURANT);
     const responseJson = await response.json();
-
+    
     if (responseJson.error) {
       throw new Error(responseJson.message);
     }
