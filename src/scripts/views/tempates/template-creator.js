@@ -21,7 +21,7 @@ const createRestaurantItemTemplate = (restaurant) => `
         <p  tabindex="0" aria-label="Restaurant Description ${restaurant.description}" class="restaurant-item__description">${restaurant.description}</p>
     </div>
     </article>
-`
+`;
 
 const createRestaurantDetailTemplate = (restaurant) => `
     <img class="restaurantDetail__thumbnail" src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}">
@@ -103,12 +103,12 @@ const createLikedButtonTemplate = () => `
 `;
 
 export {
-    createRestaurantItemTemplate,
-    createRestaurantDetailTemplate,
-    createRestaurantMenus,
-    createRestaurantReview,
-    createRestaurantReviewItem,
-    createRestaurantReviewForm,
-    createLikeButtonTemplate,
-    createLikedButtonTemplate
+  createRestaurantItemTemplate,
+  createRestaurantDetailTemplate,
+  createRestaurantMenus,
+  createRestaurantReview,
+  createRestaurantReviewItem,
+  createRestaurantReviewForm,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
 };
