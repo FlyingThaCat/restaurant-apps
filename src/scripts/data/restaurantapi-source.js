@@ -46,7 +46,7 @@ class RestaurantApi {
         throw new Error(responseJson.message);
       }
   
-    return responseJson;
+    return responseJson.restaurants;
   }
 }
 

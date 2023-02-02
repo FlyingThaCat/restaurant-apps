@@ -9,6 +9,8 @@ const app = new App({
     drawer: document.querySelector('#drawer'),
     hero: document.querySelector('.hero'),
     content: document.querySelector('main'),
+    searchInput: '#searchInput',
+    searchButton: document.querySelector('#searchButton'),
 });
 
 window.addEventListener('hashchange', () => {

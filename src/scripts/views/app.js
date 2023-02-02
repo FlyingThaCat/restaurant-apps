@@ -1,13 +1,16 @@
 import DrawerInitiator from '../utils/drawer-initiator';
+import SearchInitiator from '../utils/search-initiator';
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 
 class App {
-    constructor({button, drawer, hero, content}) {
+    constructor({button, drawer, hero, content, searchInput, searchButton}) {
         this._button = button;
         this._drawer = drawer;
         this._hero = hero;
         this._content = content;
+        this._searchInput = searchInput;
+        this._searchButton = searchButton;
 
         this._initialAppShell();
     }
@@ -18,6 +21,10 @@ class App {
             drawer: this._drawer,
             hero: this._hero,
             content: this._content,
+        });
+        SearchInitiator.init({
+            searchInput: this._searchInput,
+            searchButton: this._searchButton,
         });
     }
 
