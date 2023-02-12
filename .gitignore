@@ -1,5 +1,4 @@
 node_modules
-submission.zip
-yarn.lock
-yarn.lock
+*.lock
 notes.md
+*.zip

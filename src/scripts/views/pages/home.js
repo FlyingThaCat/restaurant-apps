@@ -20,6 +20,7 @@ const Home = {
     const restaurantsContainer = document.querySelector('#restaurants');
     restaurants.forEach((restaurant) => {
       const {id} = restaurant;
+      restaurant.picturePath = `small/${restaurant.pictureId}`;
       restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
       StarsInitiator.init({
         ratingsContainer: document.querySelector(`#restaurant-item__ratings-${id}`),

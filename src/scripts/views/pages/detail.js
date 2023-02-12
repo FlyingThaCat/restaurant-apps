@@ -23,6 +23,12 @@ const Detail = {
     const restaurant = await RestaurantApi.detailRestaurant(url.id);
     const restaurantContainer = document.querySelector('#restaurantDetail__content');
     const restaurantContent = document.querySelector('.restaurantDetail');
+    // if window max width is 600px, then use small image
+    if (window.matchMedia('(max-width: 600px)').matches) {
+      restaurant.picturePath = `small/${restaurant.pictureId}`;
+    } else {
+      restaurant.picturePath = `medium/${restaurant.pictureId}`;
+    }
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
     LikeButtonInitiator.init({

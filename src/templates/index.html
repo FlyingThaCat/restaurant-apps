@@ -11,18 +11,20 @@
   <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style> @import url('https://fonts.googleapis.com/css2?family=Sintony&display=swap'); </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sintony&display=swap" rel="stylesheet">
   <title>EatsRank - Rank The Rest</title>
 </head>
 <body>
-  <a href="#maincontent" class="skip-link">Go To Content</a>
+  <button tabindex="0" class="skip-link">Go To Content</button>
   <header class="header">
     <div class="header__wrapper">
       <div class="header__inner">
         <i class="fa-solid fa-utensils fa-xl"></i>
         <h1 class="header__title">EatsRank</h1>
       </div>
-      <a tabindex="0" id="menu" class="header__menu">☰</a>
+      <button tabindex="0" id="menu" aria-label="menu button" class="header__menu">☰</button>
     </div>
     <nav id="drawer" class="nav">
       <ul class="nav__lists">
@@ -32,7 +34,7 @@
         <li class="nav__item">
           <form onsubmit='return false' class="searchBar">
             <input id="searchInput" class="searchBox" type="text" placeholder="Search..">
-            <button id="searchButton" type="submit"><i class="fa-solid fa-search fa-xl"></i></button>
+            <button aria-label="search button" id="searchButton" type="submit"><i class="fa-solid fa-search fa-xl"></i></button>
           </form>
         </li>
       </ul>
@@ -46,7 +48,7 @@
     </div>
   </div>
 
-  <main id="maincontent">
+  <main id="maincontent" tabindex="0">
     <section class="content">
     </section>
   </main>

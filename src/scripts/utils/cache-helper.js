@@ -1,4 +1,5 @@
 import CONFIG from '../globals/config';
+// import sharp from 'sharp';
 
 const CacheHelper = {
   async cachingAppShell(request) {
