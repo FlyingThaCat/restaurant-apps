@@ -1,512 +1,551 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Sintony', sans-serif;
-}
-
-body, html {
-  height: 100%;
-  width: 100%;
-}
-
-/* Min 44px X 44px */
-a {
-  display: block;
-  min-width: 44px;
-  min-height: 44px;
-}
-
-/* Skip To Content */
-.skip-link {
-  position: absolute;
-  top: -45px;
-  left: 0;
-  background-color: #820000;
-  color: white;
-  padding: 8px;
-  z-index: 100;
-}
- 
-.skip-link:focus {
-   top: 0;
-}
-
-/* Header */
-.header__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__inner {
-  display: flex;
-  margin-left: 5%;
-  align-items: center;
-}
-
-.header__title {
-  margin: 0.3em 0.25em;
-  display: inline-block;
-  color: #212121;
-}
-
-.header__menu {
-  background: none;
-	color: inherit;
-	border: none;
-  margin-right: 6%;
-  font-size: 44px;
-}
-
-/* SEARCHBOX */
-.searchBox, select{
-  width: 68%;
-  padding: 12px 20px;
-  margin: 1.3em;
-  margin-right: 5%;
-  display: inline-block;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.searchBar button {
-  width: 18%;
-  padding: 12px;
-  border-radius: 4px;
-  margin-left: 0;
-  margin-right: 1%;
-  background: #820000;
-  color: white;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
-/* TLN */
-
-.nav {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.nav__lists {
-  margin-left: auto;
-}
-
-.nav__item {
-  list-style-type: none;
-  display: inline-block;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.nav a {
-  display: inline-block;
-  padding: 1.3em;
-  text-decoration: none;
-  color: #616161;
-}
-
-.nav a:hover {
-  text-decoration: underline;
-  color: #000;
-}
-
-/* HERO */
-.hero {
-  display: flex;
-  align-items: center;
-  min-height: 300px;
-  text-align: center;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero__inner {
-  margin: 0 auto;
-  max-width: 730px;
-}
-
-.hero__title {
-  color: #820000;
-  font-weight: 600;
-  font-size: 36px;
-}
-
-.hero__tagline {
-  color: #fff;
-  margin-top: 16px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-/* MAIN */
-main {
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* RESTAURANTS */
-.restaurants {
-  margin: 32px auto auto;
-  text-align: left;
-}
-
-/* CONTENT */
-
- .content {
-  padding: 32px;
-  margin: 0 5% 0 5%;
-}
-
-/* RESTAURANT ITEM */
-.restaurant-item {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.restaurant-item__content, .restaurant-item__header {
-  padding: 16px 32px 0px 32px;
-}
-
-.restaurant-item__header {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #820000;
-  color: #fff;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  padding: 12px;
-  display: flex;
-}
-
-.restaurant-item__location {
-  display: flex;
-  gap: 8px;
-  margin-left: auto;
-}
-
-.restaurant-item__thumbnail {
-  object-fit: cover;
-  width: 100%;
-  height: 250px;
-}
-
-.restaurant-item__name {
-  font-weight: 600;
-  font-size: 18px;
-  transition: 0.3s opacity;
-}
-
-.restaurant-item__name a {
-  text-decoration: none;
-  color: #820000;
-}
-
-.restaurant-item__name:hover {
-  opacity: 0.5;
-}
-
-.restaurant-item__description {
-  font-size: 14px;
-  margin-bottom: 16px;
-  line-height: 1.5em;
-}
-
-/* RESTAURANT LISTS */
-
-.restaurantList {
-  width: 100%;
-  margin: 60px auto;
-  text-align: center;
-}
-
-.restaurantList__label, .restaurantDetail__menu {
-  font-size: 32px;
-  font-weight: lighter;
-}
-
-.restaurantList__label::after {
-  content: "";
-  margin-top: 16px;
-  display: block;
-  border-bottom: 1px solid #eeeeee;
-}
-
-/* RESTAURANT DETAIL */
-.restaurantDetail {
-  width: 100%;
-  margin: 60px auto;
-  text-align: center;
-}
-
-.restaurantDetail__label {
-  font-size: 32px;
-  font-weight: lighter;
-}
-
-.restaurantDetail__label::after {
-  content: "";
-  margin-top: 16px;
-  display: block;
-  border-bottom: 3px solid #eeeeee;
-}
-
-#restaurantDetail__content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-#restaurantDetail__content img {
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.restaurantDetail__info {
-  margin-left: 5%;
-}
-
-.restaurantDetail__name {
-  font-weight: 500;
-  text-align: left;
-}
-
-[id^=restaurant-item__ratings-] {
-  text-align: left;
-  margin-bottom: 5px;
-}
-
-.restaurantDetail__address {
-  font-weight: 500;
-  text-align: left;
-  margin-top: 5px;
-  font-size: medium;
-}
-
-.restaurantDetail__description {
-  font-weight: 500;
-  text-align: left;
-  margin-top: 10px;
-  font-size: small;
-}
-
-.badges {
-  margin-top: 3px;
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-}
-
-.badge {
-  padding: 0.70em 1.30em;
-  font-size: .75em;
-  font-weight: 700;
-  color: #fff;
-  background-color: #820000;
-  text-align: center;
-  border-radius: 0.5rem;
-}
-
-.restaurantDetail__menu::before {
-  content: "";
-  margin-bottom: 25px;
-  display: block;
-  border-bottom: 3px solid #eeeeee;
-}
-
-.restaurantDetail__menu::after {
-  content: "";
-  margin-top: 25px;
-  display: block;
-  border-bottom: 3px solid #eeeeee;
-}
-
-.menus {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-.food__menus, .drink__menus {
-  margin: 0 auto;
-}
-
-.food__menus ul, .drink__menus ul {
-  list-style-type: none;
-}
-
-.food__menus h1, .drink__menus h1 {
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-.vertical {
-  border-left: 3px solid #eeeeee;
-}
-
-.customerReviewContainer {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  gap: 20px
-}
-
-.customerReview {
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  padding: 10px;
-}
-
-.reviewMany {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.reviewSolo {
-  grid-template-columns: 1fr
-}
-
-.customerReview h1 {
-  font-size: medium;
-  margin-top: 15px;
-}
-
-.customerReview h2 {
-  font-weight: 500;
-  font-size: small;
-}
-
-.customerReview h3 {
-  font-size: medium;
-  margin-bottom: 15px;
-}
-
-.reviewForm {
-  margin: 40px auto;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 75%;
-  overflow: hidden;
-  border-radius: 15px;
-}
-
-.reviewForm:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.reviewForm h1{
-  margin-top: 15px;
-}
-
-input[id=review] {
-  width: 300px;
-  height: 80px;
-}
-
-.required:after {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Sintony',sans-serif
+  }
+  
+  body,html {
+  height:100%;
+  width:100%
+  }
+  
+  a {
+  display:block;
+  min-width:44px;
+  min-height:44px
+  }
+  
+  .skip-link {
+  position:absolute;
+  top:-45px;
+  left:0;
+  background-color:#820000;
+  color:#fff;
+  padding:8px;
+  z-index:100
+  }
+  
+  .skip-link:focus {
+  top:0
+  }
+  
+  .header__wrapper {
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+  }
+  
+  .header__inner {
+  display:flex;
+  margin-left:5%;
+  align-items:center
+  }
+  
+  .header__title {
+  margin:.3em .25em;
+  display:inline-block;
+  color:#212121
+  }
+  
+  .header__menu {
+  background:none;
+  color:inherit;
+  border:none;
+  margin-right:6%;
+  font-size:44px
+  }
+  
+  .searchBox,select {
+  width:68%;
+  padding:12px 20px;
+  margin:1.3em;
+  margin-right:5%;
+  display:inline-block;
+  border:2px solid #ccc;
+  border-radius:4px;
+  box-sizing:border-box
+  }
+  
+  .searchBar button {
+  width:18%;
+  padding:12px;
+  border-radius:4px;
+  margin-left:0;
+  margin-right:1%;
+  background:#820000;
+  color:#fff;
+  font-size:17px;
+  border:none;
+  cursor:pointer
+  }
+  
+  .nav {
+  width:100%;
+  margin-left:auto;
+  margin-right:auto
+  }
+  
+  .nav__lists {
+  margin-left:auto
+  }
+  
+  .nav__item {
+  list-style-type:none;
+  display:inline-block;
+  text-align:center;
+  text-transform:uppercase
+  }
+  
+  .nav a {
+  display:inline-block;
+  padding:1.3em;
+  text-decoration:none;
+  color:#616161
+  }
+  
+  .nav a:hover {
+  text-decoration:underline;
+  color:#000
+  }
+  
+  .hero {
+  display:flex;
+  align-items:center;
+  min-height:300px;
+  text-align:center;
+  background-size:cover;
+  background-position:center
+  }
+  
+  .hero__inner {
+  margin:0 auto;
+  max-width:730px
+  }
+  
+  .hero__title {
+  color:#820000;
+  font-weight:600;
+  font-size:36px
+  }
+  
+  .hero__tagline {
+  color:#fff;
+  margin-top:16px;
+  font-size:18px;
+  font-weight:500
+  }
+  
+  main {
+  width:100%;
+  margin:0 auto
+  }
+  
+  .restaurants {
+  margin:32px auto auto;
+  text-align:justify
+  }
+  
+  .content {
+  padding:32px;
+  margin:0 5%
+  }
+  
+  .restaurant-item {
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+  width:100%;
+  border-radius:15px;
+  overflow:hidden
+  }
+  
+  .restaurant-item__content,.restaurant-item__header {
+  padding:16px 32px 0
+  }
+  
+  .restaurant-item__header {
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+  background-color:#820000;
+  color:#fff;
+  border-bottom-left-radius:15px;
+  border-bottom-right-radius:15px;
+  padding:12px;
+  display:flex
+  }
+  
+  .restaurant-item__location {
+  display:flex;
+  gap:8px;
+  margin-left:auto
+  }
+  
+  .restaurant-item__thumbnail {
+  object-fit:cover;
+  width:100%;
+  height:250px
+  }
+  
+  .restaurant-item__name {
+  font-weight:600;
+  font-size:18px;
+  transition:.3s opacity
+  }
+  
+  .restaurant-item__name a {
+  text-decoration:none;
+  color:#820000
+  }
+  
+  .restaurant-item__name:hover {
+  opacity:.5
+  }
+  
+  .restaurant-item__description {
+  font-size:14px;
+  margin-bottom:16px;
+  line-height:1.5em
+  }
+  
+  .restaurantList {
+  width:100%;
+  margin:60px auto;
+  text-align:center
+  }
+  
+  .restaurantList__label,.restaurantDetail__menu {
+  font-size:32px;
+  font-weight:lighter
+  }
+  
+  .restaurantList__label::after {
+  content:"";
+  margin-top:16px;
+  display:block;
+  border-bottom:1px solid #eee
+  }
+  
+  .restaurantDetail {
+  width:100%;
+  margin:60px auto;
+  text-align:center
+  }
+  
+  .restaurantDetail__label {
+  font-size:32px;
+  font-weight:lighter
+  }
+  
+  .restaurantDetail__label::after {
+  content:"";
+  margin-top:16px;
+  display:block;
+  border-bottom:3px solid #eee
+  }
+  
+  #restaurantDetail__content {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:30px
+  }
+  
+  #restaurantDetail__content img {
+  border-radius:15px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2)
+  }
+  
+  .restaurantDetail__info {
+  margin-left:5%
+  }
+  
+  .restaurantDetail__name {
+  font-weight:500;
+  text-align:left
+  }
+  
+  [id^=restaurant-item__ratings-] {
+  text-align:left;
+  margin-bottom:5px
+  }
+  
+  .restaurantDetail__address {
+  font-weight:500;
+  text-align:left;
+  margin-top:5px;
+  font-size:medium
+  }
+  
+  .restaurantDetail__description {
+  font-weight:500;
+  text-align:left;
+  margin-top:10px;
+  font-size:small
+  }
+  
+  .badges {
+  margin-top:3px;
+  display:flex;
+  flex-direction:row;
+  gap:5px
+  }
+  
+  .badge {
+  padding:.7em 1.3em;
+  font-size:.75em;
+  font-weight:700;
+  color:#fff;
+  background-color:#820000;
+  text-align:center;
+  border-radius:.5rem
+  }
+  
+  .restaurantDetail__menu::before {
+  content:"";
+  margin-bottom:25px;
+  display:block;
+  border-bottom:3px solid #eee
+  }
+  
+  .restaurantDetail__menu::after {
+  content:"";
+  margin-top:25px;
+  display:block;
+  border-bottom:3px solid #eee
+  }
+  
+  .menus {
+  margin-top:10px;
+  display:flex;
+  gap:10px;
+  justify-content:center
+  }
+  
+  .food__menus,.drink__menus {
+  margin:0 auto
+  }
+  
+  .food__menus ul,.drink__menus ul {
+  list-style-type:none
+  }
+  
+  .food__menus h1,.drink__menus h1 {
+  text-align:center;
+  margin-bottom:5px
+  }
+  
+  .vertical {
+  border-left:3px solid #eee
+  }
+  
+  .customerReviewContainer {
+  display:grid;
+  align-items:center;
+  justify-content:center;
+  gap:20px
+  }
+  
+  .customerReview {
+  margin-top:20px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+  border-radius:15px;
+  padding:10px
+  }
+  
+  .reviewMany {
+  grid-template-columns:repeat(2,1fr)
+  }
+  
+  .reviewSolo {
+  grid-template-columns:1fr
+  }
+  
+  .customerReview h1 {
+  font-size:medium;
+  margin-top:15px
+  }
+  
+  .customerReview h2 {
+  font-weight:500;
+  font-size:small
+  }
+  
+  .customerReview h3 {
+  font-size:medium;
+  margin-bottom:15px
+  }
+  
+  .reviewForm {
+  margin:40px auto;
+  box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+  transition:.3s;
+  width:75%;
+  overflow:hidden;
+  border-radius:15px
+  }
+  
+  .reviewForm:hover {
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.2)
+  }
+  
+  .reviewForm h1 {
+  margin-top:15px
+  }
+  
+  input[id=review] {
+  width:300px;
+  height:80px
+  }
+  
+  .required:after {
   content:" *";
-  color: red;
-}
-
-input[id=name], select {
-  width: 65%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-textarea, select {
-  width: 65%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 65%;
-  background-color: #c21515;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-input[type=submit]:hover {
-  background-color: #820000;
-}
-
-/*
-  Like
-*/
-.like {
-  width: 55px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ff0000;
+  color:red
+  }
   
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  border-radius: 50%;
-  border: 0;
+  input[id=name],select {
+  width:65%;
+  padding:12px 20px;
+  margin:8px 0;
+  display:inline-block;
+  border:2px solid #ccc;
+  border-radius:4px;
+  box-sizing:border-box
+  }
   
-  font-size: 18px;
-  color: white;
-  cursor: pointer;
-} 
-
-/* FOOTER */
-
-footer {
-  background-color: #820000;
-  padding: 1.7em;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  display: flex;
-}
-
-footer .copyright {
-  color: #fff;
-}
-
-footer ul {
-  text-transform: uppercase;
-  margin-left: auto;
-  display: flex;
-  text-align: center;
-  align-items: center;
-}
-
-footer li {
-  display: inline-block;
-}
-
-footer a {
-  padding: 1em;
-  text-decoration: none;
-  color: #fff;
-}
-
-footer a:hover {
-  text-decoration: underline;
-  color: #616161;
-}
+  textarea,select {
+  width:65%;
+  padding:12px 20px;
+  margin:8px 0;
+  display:inline-block;
+  border:2px solid #ccc;
+  border-radius:4px;
+  box-sizing:border-box
+  }
+  
+  input[type=submit] {
+  width:65%;
+  background-color:#c21515;
+  color:#fff;
+  padding:14px 20px;
+  margin:8px 0;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  margin-bottom:20px
+  }
+  
+  input[type=submit]:hover {
+  background-color:#820000
+  }
+  
+  .like {
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:red;
+  position:fixed;
+  bottom:16px;
+  right:16px;
+  border-radius:50%;
+  border:0;
+  font-size:18px;
+  color:#fff;
+  cursor:pointer
+  }
+  
+  footer {
+  background-color:#820000;
+  padding:1.7em;
+  width:100%;
+  text-align:center;
+  align-items:center;
+  display:flex
+  }
+  
+  footer .copyright {
+  color:#fff
+  }
+  
+  footer ul {
+  text-transform:uppercase;
+  margin-left:auto;
+  display:flex;
+  text-align:center;
+  align-items:center
+  }
+  
+  footer li {
+  display:inline-block
+  }
+  
+  footer a {
+  padding:1em;
+  text-decoration:none;
+  color:#fff
+  }
+  
+  footer a:hover {
+  text-decoration:underline;
+  color:#616161
+  }
+  
+  .skeleton {
+  -webkit-animation:skeleton-loading 1s linear infinite alternate;
+  animation:skeleton-loading 1s linear infinite alternate
+  }
+  
+  @-webkit-keyframes skeleton-loading {
+  0% {
+  background-color:#c2cfd6
+  }
+  
+  100% {
+  background-color:#f0f3f5
+  }
+  }
+  
+  @keyframes skeleton-loading {
+  0% {
+  background-color:#c2cfd6
+  }
+  
+  100% {
+  background-color:#f0f3f5
+  }
+  }
+  
+  .skeleton-header {
+  width:45%;
+  height:1.1rem;
+  border-radius:.5rem;
+  margin-bottom:.5rem
+  }
+  
+  .skeleton-image {
+  width:50%;
+  height:250px;
+  border-radius:15px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2)
+  }
+  
+  .skeleton-badge {
+  width:70px;
+  height:1.8rem;
+  border-radius:.5rem
+  }
+  
+  .skeleton-text {
+  width:100%;
+  height:1.1rem;
+  margin-top:10px;
+  border-radius:.5rem;
+  margin-bottom:.5rem
+  }
+  
+  .skeleton-text-small {
+  width:100%;
+  height:.8rem;
+  margin-top:10px;
+  border-radius:.5rem;
+  margin-bottom:.5rem
+  }

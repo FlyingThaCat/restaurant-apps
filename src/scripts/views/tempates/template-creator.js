@@ -16,12 +16,32 @@ const createRestaurantItemTemplate = (restaurant) => `
             <p class="restaurant-item__city">${restaurant.city}</p>
         </div>
     </div>
-    <div class="restaurant-item__content">
+    <div class="restaurant-item__content ">
         <h1 tabindex="0" aria-label="Restaurant Name ${restaurant.name}" class="restaurant-item__name"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h1>
         <p  tabindex="0" aria-label="Restaurant Description ${restaurant.description}" class="restaurant-item__description">${restaurant.description}</p>
     </div>
     </article>
 `;
+
+const createRestaurantItemSkeletonTemplate = () => `
+<article class="restaurant-item">
+    <img class="restaurant-item__thumbnail skeleton">
+    <div class="restaurant-item__header">
+        <div tabindex="0" role="complementary" class="skeleton skeleton-header"></div>
+        <div tabindex="0" class="restaurant-item__location skeleton skeleton-header"></div>
+    </div>
+    <div class="restaurant-item__content">
+        <h1 tabindex="0" class="skeleton skeleton-header restaurant-item__name"></h1>
+        <div tabindex="0" class="restaurant-item__description skeleton skeleton-text"></div>
+        <div tabindex="0" class="restaurant-item__description skeleton skeleton-text"></div>
+        <div tabindex="0" class="restaurant-item__description skeleton skeleton-text"></div>
+        <div tabindex="0" class="restaurant-item__description skeleton skeleton-text"></div>
+        <div tabindex="0" class="restaurant-item__description skeleton skeleton-text"></div>
+        <div tabindex="0" class="restaurant-item__description skeleton skeleton-text"></div>
+    </div>
+    </article>
+`;
+
 
 const createRestaurantDetailTemplate = (restaurant) => `
     <img class="restaurantDetail__thumbnail" src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.picturePath : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}">
@@ -39,6 +59,26 @@ const createRestaurantDetailTemplate = (restaurant) => `
        </div>
        <h2 tabindex="0" aria-label="Restaurant Address ${restaurant.address}" class="restaurantDetail__address">${restaurant.address}</h2>
        <p  tabindex="0" aria-label="Restaurant Description ${restaurant.description}" class="restaurantDetail__description">${restaurant.description}</p>
+    </div>
+`;
+
+const createRestaurantDetailSkeletonTemplate = () => `
+    <div class="skeleton skeleton-image"></div>
+    <div class="restaurantDetail__info">
+       <div tabindex="0" class="restaurantDetail__name skeleton skeleton-text"></div>
+       <div tabindex="0" role="complementary" class="skeleton skeleton-header"></div>
+       <div class="badges">
+          <div class="badge skeleton skeleton-badge"></div>
+          <div class="badge skeleton skeleton-badge"></div>
+          <div class="badge skeleton skeleton-badge"></div>
+       </div>
+       <h2 tabindex="0" class="restaurantDetail__address skeleton skeleton-text"></h2>
+       <p  tabindex="0" class="restaurantDetail__description skeleton skeleton-text-small"></p>
+       <p  tabindex="0" class="restaurantDetail__description skeleton skeleton-text-small"></p>
+       <p  tabindex="0" class="restaurantDetail__description skeleton skeleton-text-small"></p>
+       <p  tabindex="0" class="restaurantDetail__description skeleton skeleton-text-small"></p>
+       <p  tabindex="0" class="restaurantDetail__description skeleton skeleton-text-small"></p>
+       <p  tabindex="0" class="restaurantDetail__description skeleton skeleton-text-small"></p>
     </div>
 `;
 
@@ -104,7 +144,9 @@ const createLikedButtonTemplate = () => `
 
 export {
   createRestaurantItemTemplate,
+  createRestaurantItemSkeletonTemplate,
   createRestaurantDetailTemplate,
+  createRestaurantDetailSkeletonTemplate,
   createRestaurantMenus,
   createRestaurantReview,
   createRestaurantReviewItem,

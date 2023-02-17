@@ -1,5 +1,5 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
-import {createRestaurantItemTemplate} from '../tempates/template-creator';
+import {createRestaurantItemTemplate, createRestaurantItemSkeletonTemplate} from '../tempates/template-creator';
 import StarsInitiator from '../../utils/stars-initiator';
 
 const Favorite = {
@@ -15,8 +15,13 @@ const Favorite = {
   },
 
   async afterRender() {
-    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     const restaurantsContainer = document.querySelector('#restaurants');
+    for (let i = 0; i < 10; i++) {
+      restaurantsContainer.innerHTML += createRestaurantItemSkeletonTemplate();
+    }
+
+    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    restaurantsContainer.innerHTML = '';
 
     restaurants.forEach((restaurant) => {
       const {id} = restaurant;

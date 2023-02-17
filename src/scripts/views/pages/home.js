@@ -1,5 +1,5 @@
 import RestaurantApi from '../../data/restaurantapi-source';
-import {createRestaurantItemTemplate} from '../tempates/template-creator';
+import {createRestaurantItemTemplate, createRestaurantItemSkeletonTemplate} from '../tempates/template-creator';
 import StarsInitiator from '../../utils/stars-initiator';
 
 const Home = {
@@ -16,11 +16,17 @@ const Home = {
   },
 
   async afterRender() {
-    const restaurants = await RestaurantApi.listRestaurant();
     const restaurantsContainer = document.querySelector('#restaurants');
+    for (let i = 0; i < 10; i++) {
+      restaurantsContainer.innerHTML += createRestaurantItemSkeletonTemplate();
+    }
+
+    const restaurants = await RestaurantApi.listRestaurant();
+    restaurantsContainer.innerHTML = '';
     restaurants.forEach((restaurant) => {
       const {id} = restaurant;
       restaurant.picturePath = `small/${restaurant.pictureId}`;
+      restaurant.description = `${restaurant.description.slice(0, 300)}...`;
       restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
       StarsInitiator.init({
         ratingsContainer: document.querySelector(`#restaurant-item__ratings-${id}`),

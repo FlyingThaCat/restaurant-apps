@@ -1,6 +1,6 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantApi from '../../data/restaurantapi-source';
-import {createRestaurantDetailTemplate, createRestaurantMenus, createRestaurantReview, createRestaurantReviewItem} from '../tempates/template-creator';
+import {createRestaurantDetailTemplate, createRestaurantDetailSkeletonTemplate, createRestaurantMenus, createRestaurantReview, createRestaurantReviewItem} from '../tempates/template-creator';
 import ReviewForm from '../../utils/review-form-initiator';
 import StarsInitiator from '../../utils/stars-initiator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
@@ -19,10 +19,12 @@ const Detail = {
   },
 
   async afterRender() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await RestaurantApi.detailRestaurant(url.id);
     const restaurantContainer = document.querySelector('#restaurantDetail__content');
     const restaurantContent = document.querySelector('.restaurantDetail');
+    restaurantContainer.innerHTML = createRestaurantDetailSkeletonTemplate();
+
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurant = await RestaurantApi.detailRestaurant(url.id);
     // if window max width is 600px, then use small image
     if (window.matchMedia('(max-width: 600px)').matches) {
       restaurant.picturePath = `small/${restaurant.pictureId}`;
