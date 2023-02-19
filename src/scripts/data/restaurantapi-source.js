@@ -2,25 +2,17 @@ import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestaurantApi {
   static async listRestaurant() {
-    const response = await fetch(API_ENDPOINT.LIST_RESTAURANT);
-    const responseJson = await response.json();
+    const response = await fetch(API_ENDPOINT.LIST_RESTAURANT).json();
 
-    if (responseJson.error) {
-      throw new Error(responseJson.message);
-    }
-
-    return responseJson.restaurants;
+    if (response.error) throw new Error(response.message);
+    return response.restaurants;
   }
 
   static async detailRestaurant(id) {
-    const response = await fetch(API_ENDPOINT.DETAIL(id));
-    const responseJson = await response.json();
+    const response = await fetch(API_ENDPOINT.DETAIL(id)).json();
 
-    if (responseJson.error) {
-      throw new Error(responseJson.message);
-    }
-
-    return responseJson.restaurant;
+    if (response.error) throw new Error(responseJson.message);
+    return response.restaurant;
   }
 
   static async addReviewRestaurant(id, name, review) {
@@ -28,25 +20,17 @@ class RestaurantApi {
       method: 'POST',
       headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
       body: JSON.stringify({id: id, name: name, review: review}),
-    });
-    const responseJson = await response.json();
+    }).json();
 
-    if (responseJson.error) {
-      throw new Error(responseJson.message);
-    }
-
-    return responseJson;
+    if (response.error) throw new Error(response.message);
+    return response;
   }
 
   static async searchRestaurant(query) {
-    const response = await fetch(API_ENDPOINT.SEARCH(query));
-    const responseJson = await response.json();
+    const response = await fetch(API_ENDPOINT.SEARCH(query)).json();
 
-    if (responseJson.error) {
-      throw new Error(responseJson.message);
-    }
-
-    return responseJson.restaurants;
+    if (response.error) throw new Error(response.message);
+    return response.restaurants;
   }
 }
 

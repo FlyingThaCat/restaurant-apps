@@ -6,10 +6,7 @@ const SearchInitiator = {
   async init({searchInput, searchButton}) {
     this._searchInput = searchInput;
 
-    searchButton.addEventListener('click', async (event) => {
-      await this._search(event, this._searchInput);
-    });
-
+    searchButton.addEventListener('click', async (event) => await this._search(event, this._searchInput));
     searchButton.addEventListener('keypress', async (event) => {
       if (e.key === 'Enter') {
         await this._search(event, this._searchInput);
