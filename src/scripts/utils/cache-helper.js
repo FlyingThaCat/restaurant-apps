@@ -1,5 +1,4 @@
 import CONFIG from '../globals/config';
-// import sharp from 'sharp';
 
 const CacheHelper = {
   async cachingAppShell(request) {
@@ -31,9 +30,7 @@ const CacheHelper = {
   async _fetchRequest(request) {
     const response = await fetch(request, {cache: 'reload'});
 
-    if (!response || response.status !== 200) {
-      return response;
-    }
+    if (!response || response.status !== 200) return response;
 
     await this._addCache(request);
     return response;

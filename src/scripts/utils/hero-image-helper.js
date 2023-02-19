@@ -12,12 +12,8 @@ const HeroImageHelper = {
     const heroHeaderBackground = new Image();
     heroHeaderBackground.src = src;
 
-    heroHeaderBackground.onload = function() {
-      heroStyle.style.backgroundImage = `linear-gradient(to bottom, rgba(168, 158, 145, 0.63), rgba(168, 166, 162, 0.842)), url(${heroHeaderBackground.src})`;
-    };
-    heroHeaderBackground.onerror = function() {
-      heroStyle.style.backgroundImage = `linear-gradient(to bottom, rgba(168, 158, 145, 0.63), rgba(168, 166, 162, 0.842)), url(${callback})`;
-    };
+    heroHeaderBackground.onload = () => heroStyle.style.backgroundImage = `linear-gradient(to bottom, rgba(168, 158, 145, 0.63), rgba(168, 166, 162, 0.842)), url(${heroHeaderBackground.src})`;
+    heroHeaderBackground.onerror = () => heroStyle.style.backgroundImage = `linear-gradient(to bottom, rgba(168, 158, 145, 0.63), rgba(168, 166, 162, 0.842)), url(${callback})`;
   },
 };
 

@@ -8,14 +8,12 @@ const StarsInitiator = {
 
   _renderStars() {
     const stars = this._ratingsContainer.getElementsByTagName('i');
-    for (let i = 0; i < this._restaurantRating; i++) {
-      stars[i].classList.add('fa-solid');
-    }
+
+    // full star logic
+    for (let i = 0; i < this._restaurantRating; i++) stars[i].classList.add('fa-solid');
 
     // half star logic
-    if (this._restaurantRating % 1 !== 0) {
-      stars[Math.floor(this._restaurantRating)].classList.add('fa-star-half-alt');
-    }
+    if (this._restaurantRating % 1 !== 0) stars[Math.floor(this._restaurantRating)].classList.add('fa-star-half-alt');
   },
 };
 

@@ -1,9 +1,15 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantApi from '../../data/restaurantapi-source';
-import {createRestaurantDetailTemplate, createRestaurantDetailSkeletonTemplate, createRestaurantMenus, createRestaurantReview, createRestaurantReviewItem} from '../tempates/template-creator';
 import ReviewForm from '../../utils/review-form-initiator';
 import StarsInitiator from '../../utils/stars-initiator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import {
+  createRestaurantDetailTemplate,
+  createRestaurantDetailSkeletonTemplate,
+  createRestaurantMenus,
+  createRestaurantReview,
+  createRestaurantReviewItem,
+} from '../tempates/template-creator';
 
 const Detail = {
   async render() {
