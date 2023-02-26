@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Sintony';
   src: url("../public/fonts/Sintony-Regular.ttf");
+  font-display: swap;
 }
 
 * {
