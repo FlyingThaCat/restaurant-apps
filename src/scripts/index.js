@@ -13,10 +13,7 @@ const app = new App({
   searchButton: document.querySelector('#searchButton'),
 });
 
-window.addEventListener('hashchange', () => {
-  app.renderPage();
-});
-
+window.addEventListener('hashchange', () => app.renderPage());
 window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
