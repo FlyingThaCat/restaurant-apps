@@ -1,5 +1,6 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import {createRestaurantItemTemplate, createRestaurantItemSkeletonTemplate} from '../tempates/template-creator';
+import detectSpace from '../../utils/detect-space';
 import StarsInitiator from '../../utils/stars-initiator';
 
 const Favorite = {
@@ -22,9 +23,12 @@ const Favorite = {
 
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     restaurantsContainer.innerHTML = '';
-
     restaurants.forEach((restaurant) => {
       const {id} = restaurant;
+      restaurant.picturePath = `medium/${restaurant.pictureId}`;
+      restaurant.description = detectSpace(restaurant.description);
+      restaurant.description = `${restaurant.description.slice(0, 300)}`;
+      restaurant.description = `${detectSpace(restaurant.description)}...`;
       restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
       StarsInitiator.init({
         ratingsContainer: document.querySelector(`#restaurant-item__ratings-${id}`),

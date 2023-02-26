@@ -1,6 +1,10 @@
 import RestaurantApi from '../../data/restaurantapi-source';
-import {createRestaurantItemTemplate, createRestaurantItemSkeletonTemplate} from '../tempates/template-creator';
 import StarsInitiator from '../../utils/stars-initiator';
+import detectSpace from '../../utils/detect-space';
+import {
+  createRestaurantItemTemplate,
+  createRestaurantItemSkeletonTemplate,
+} from '../tempates/template-creator';
 
 const Home = {
   async render() {
@@ -8,8 +12,7 @@ const Home = {
             <section class="content">
                 <div class="restaurantList">
                     <h1 tabindex="0" class="restaurantList__label">Restaurant List</h1>
-                    <div class="restaurants" id="restaurants">
-                    </div>
+                    <div class="restaurants" id="restaurants"></div>
                 </div>
             </section>
         `;
@@ -26,7 +29,8 @@ const Home = {
     restaurants.forEach((restaurant) => {
       const {id} = restaurant;
       restaurant.picturePath = `medium/${restaurant.pictureId}`;
-      restaurant.description = `${restaurant.description.slice(0, 300)}...`;
+      restaurant.description = `${restaurant.description.slice(0, 300)}`;
+      restaurant.description = `${detectSpace(restaurant.description)}...`;
       restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
       StarsInitiator.init({
         ratingsContainer: document.querySelector(`#restaurant-item__ratings-${id}`),

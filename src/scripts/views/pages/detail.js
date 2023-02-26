@@ -1,15 +1,10 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantApi from '../../data/restaurantapi-source';
+import {createRestaurantDetailTemplate, createRestaurantDetailSkeletonTemplate, createRestaurantMenus, createRestaurantReview, createRestaurantReviewItem} from '../tempates/template-creator';
 import ReviewForm from '../../utils/review-form-initiator';
 import StarsInitiator from '../../utils/stars-initiator';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
-import {
-  createRestaurantDetailTemplate,
-  createRestaurantDetailSkeletonTemplate,
-  createRestaurantMenus,
-  createRestaurantReview,
-  createRestaurantReviewItem,
-} from '../tempates/template-creator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 const Detail = {
   async render() {
@@ -39,8 +34,9 @@ const Detail = {
     }
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: restaurant,
     });
 
