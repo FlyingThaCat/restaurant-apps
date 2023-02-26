@@ -3,7 +3,7 @@ import CONFIG from '../../globals/config';
 const createRestaurantItemTemplate = (restaurant) => `
 <article class="restaurant-item">
     <picture>
-      <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}">
+      <source media="(max-width: 500px)" srcset="${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}">
       <img loading="lazy" class="restaurant-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}" alt="${restaurant.name}">
     </picture>
     <div class="restaurant-item__header">
