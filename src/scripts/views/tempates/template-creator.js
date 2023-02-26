@@ -126,7 +126,7 @@ const createRestaurantReviewForm = () => `
         <br>
         <textarea id="review" name="review" form="restaurantForm" required></textarea>
         <br>
-        <input type="submit" value="Submit">
+        <input id="submitReview" type="submit" value="Submit">
     </form>
 `;
 

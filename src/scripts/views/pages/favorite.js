@@ -22,6 +22,13 @@ const Favorite = {
     }
 
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    if (restaurants.length === 0) {
+      Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: 'You have not added any favorite restaurant yet!',
+      });
+    }
     restaurantsContainer.innerHTML = '';
     restaurants.forEach((restaurant) => {
       const {id} = restaurant;

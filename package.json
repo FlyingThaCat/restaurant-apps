@@ -8,7 +8,8 @@
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
     "lint": "eslint ./src",
-    "hero-optimize": "node hero-optimize.js"
+    "hero-optimize": "node hero-optimize.js",
+    "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
   "author": "John Tjandra Utomo latestofmymind@gmail.com>",
@@ -17,6 +18,7 @@
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "babel-loader": "^8.2.5",
+    "codeceptjs": "^3.4.1",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.2.2",
@@ -32,7 +34,7 @@
     "karma-sourcemap-loader": "^0.3.8",
     "karma-webpack": "^5.0.0",
     "mini-css-extract-plugin": "^2.7.2",
-    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "puppeteer": "^19.7.2",
     "sharp": "^0.31.3",
     "webpack": "^5.73.0",
     "webpack-bundle-analyzer": "^4.7.0",
