@@ -2,7 +2,10 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantItemTemplate = (restaurant) => `
 <article class="restaurant-item">
-    <img loading="lazy" class="restaurant-item__thumbnail" src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.picturePath : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}">
+    <picture>
+      <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}">
+      <img loading="lazy" class="restaurant-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}" alt="${restaurant.name}">
+    </picture>
     <div class="restaurant-item__header">
         <div tabindex="0" role="complementary" aria-label="Rating ${restaurant.rating}" id="restaurant-item__ratings-${restaurant.id}">
             <i class="fa-regular fa-star"></i>
@@ -44,7 +47,10 @@ const createRestaurantItemSkeletonTemplate = () => `
 
 
 const createRestaurantDetailTemplate = (restaurant) => `
-    <img class="restaurantDetail__thumbnail" src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.picturePath : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}">
+    <picture>
+      <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}">
+      <img class="restaurantDetail__thumbnail" src="${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}" alt="${restaurant.name}">
+    </picture>
     <div class="restaurantDetail__info">
        <h1 tabindex="0" aria-label="Restaurant Name ${restaurant.name}" class="restaurantDetail__name">${restaurant.name}</h1>
        <div tabindex="0" role="complementary" aria-label="Rating ${restaurant.rating}" id="restaurant-item__ratings-${restaurant.id}">

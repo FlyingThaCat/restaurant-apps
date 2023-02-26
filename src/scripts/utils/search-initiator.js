@@ -26,7 +26,6 @@ const SearchInitiator = {
       restaurantsContainer.innerHTML += createRestaurantItemSkeletonTemplate();
     }
 
-    // if url is / /#/
     if (window.location.hash === '#/' || window.location.hash === '') {
       if (searchInput.trim()) {
         const restaurants = await RestaurantApi.searchRestaurant(searchInput);
@@ -76,7 +75,6 @@ const SearchInitiator = {
     restaurantsContainer.innerHTML = '';
     restaurants.forEach((restaurant) => {
       const {id} = restaurant;
-      restaurant.picturePath = `medium/${restaurant.pictureId}`;
       restaurant.description = detectSpace(restaurant.description);
       restaurant.description = `${restaurant.description.slice(0, 300)}`;
       restaurant.description = `${detectSpace(restaurant.description)}...`;

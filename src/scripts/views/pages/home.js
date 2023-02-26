@@ -28,7 +28,6 @@ const Home = {
     restaurantsContainer.innerHTML = '';
     restaurants.forEach((restaurant) => {
       const {id} = restaurant;
-      restaurant.picturePath = `medium/${restaurant.pictureId}`;
       restaurant.description = `${restaurant.description.slice(0, 300)}`;
       restaurant.description = `${detectSpace(restaurant.description)}...`;
       restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);

@@ -1,4 +1,3 @@
-import HeroImageHelper from '../utils/hero-image-helper';
 import DrawerInitiator from '../utils/drawer-initiator';
 import SearchInitiator from '../utils/search-initiator';
 import UrlParser from '../routes/url-parser';
@@ -30,7 +29,6 @@ class App {
   }
 
   async renderPage() {
-    HeroImageHelper.init({heroStyle: this._hero});
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();

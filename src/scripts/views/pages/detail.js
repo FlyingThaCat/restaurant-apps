@@ -26,12 +26,6 @@ const Detail = {
 
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantApi.detailRestaurant(url.id);
-    // if window max width is 600px, then use small image
-    if (window.matchMedia('(max-width: 600px)').matches) {
-      restaurant.picturePath = `small/${restaurant.pictureId}`;
-    } else {
-      restaurant.picturePath = `medium/${restaurant.pictureId}`;
-    }
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
     LikeButtonPresenter.init({
